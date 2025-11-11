@@ -1,0 +1,29 @@
+{
+  "name": "ext-mcp",
+  "version": "0.0.1",
+  "description": "可扩展 MCP 框架 - Extendable MCP Framework",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "clean": "rimraf lib",
+    "build": "npm run clean && tsc -p tsconfig.build.json",
+    "demo": "npm run build && tsx demo",
+    "prepare": "npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.21.1",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "@types/node": "24.10.0",
+    "rimraf": "^6.1.0",
+    "tsx": "^4.20.6"
+  },
+  "engines": {
+    "node": ">= 18"
+  }
+}

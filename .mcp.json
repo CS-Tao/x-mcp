@@ -1,0 +1,7 @@
+{
+	"servers": {
+		"mcp-demo": {
+			"command": "demo/run.sh"
+		}
+	}
+}
