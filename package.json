@@ -1,6 +1,6 @@
 {
   "name": "ext-mcp",
-  "version": "1.0.0-alpha.2",
+  "version": "1.0.0-alpha.3",
   "description": "可扩展 MCP 框架 - Extendable MCP Framework",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -26,5 +26,13 @@
   "engines": {
     "node": ">= 18"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CS-Tao/x-mcp"
+  },
+  "bugs": {
+    "url": "https://github.com/CS-Tao/x-mcp/issues"
+  },
+  "homepage": "https://github.com/CS-Tao/x-mcp#readme",
   "keywords": ["mcp"]
 }
