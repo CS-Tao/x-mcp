@@ -38,7 +38,7 @@
 
 ## 快速上手
 
-> 🌰 示例代码见 [demo](./demo/) 目录
+> 🌰 完整示例代码见 [demo](./demo/) 目录
 
 ### 安装
 
@@ -139,6 +139,8 @@ export default demoMod;
 
 ## 仓库开发
 
+> 核心代码在 [src](./src/) 目录，使用示例在 [demo](./demo/) 目录
+
 ### 启动 mcp-demo 服务
 
 ```bash
@@ -153,8 +155,8 @@ npx @modelcontextprotocol/inspector
 
 ### 配置 mcp-demo 服务
 
-仓库中已经针对部分 IDE 做了配置，可直接查看效果:
+仓库中已经针对部分 IDE 做了配置，可直接在 IDE 中查看效果，配置文件:
 
-- claude-code: `.mcp.json`
-- cursor: `.cursor/mcp.json`
-- github-copilot: `.vscode/mcp.json`
+- [claude-code - .mcp.json](.mcp.json)
+- [cursor - .cursor/mcp.json](.cursor/mcp.json)
+- [github-copilot - .vscode/mcp.json](.vscode/mcp.json`)
