@@ -1,8 +1,8 @@
-# ext-mcp
+# Ext-mcp
 
 > 🧩 可扩展 MCP 框架 - Extendable MCP Framework
 
-`ext-mcp` 包含 `中间件` 和 `模组` 两个概念
+`Ext-mcp` 包含 `中间件` 和 `模组` 两个概念
 
 - 中间件：用于承载通用能力，基于洋葱模型实现
 - 模组：用于功能扩展，是 MCP 功能的集合 -- _功能指 MCP 协议中的 tool/prompt/resource_
@@ -76,13 +76,13 @@ app.start();
 
 ### 中间件定义
 
-> 以实现一个 logger 中间件为例，在上下文中注入 sessionId 和 logger
+> 以实现一个 logger 中间件为例，在上下文中注入 logId 和 logger
 
 ```typescript
 import { type Middleware } from "mcp";
 
 export interface LoggerContext {
-  sessionId: string;
+  logId: string;
   logger: {
     info: (message: string) => void;
     error: (message: string) => void;
@@ -90,8 +90,8 @@ export interface LoggerContext {
 }
 
 const middleware: Middleware<LoggerContext> = async (context, next) => {
-  context.sessionId = `foo-session-id`;
-  context.logger = createLogger(context.sessionId);
+  context.logId = `foo-log-id`;
+  context.logger = createLogger(context.logId);
   context.logger.info(`mcp started: ${context.actionName}`);
   const res = await next();
   context.logger.info(`mcp finished: ${context.actionName}`);

@@ -1,6 +1,6 @@
 {
   "name": "ext-mcp",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.2",
   "description": "可扩展 MCP 框架 - Extendable MCP Framework",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -25,5 +25,6 @@
   },
   "engines": {
     "node": ">= 18"
-  }
+  },
+  "keywords": ["mcp"]
 }
