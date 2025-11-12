@@ -6,31 +6,21 @@ on:
       - main
 
 jobs:
-  install:
+  ci:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - run: npm ci
+          cache: 'npm'
 
-  build:
-    needs: install
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-      - run: npm run build
+      - name: Install dependencies
+        run: npm ci
 
-  test:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 18 # Use Node.js 18 for testing
-      - run: npm run test
+      - name: Build project
+        run: npm run build
+
+      - name: Test project (Node 18)
+        run: npx -y node@18 npm run test
