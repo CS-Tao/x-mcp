@@ -144,12 +144,22 @@ export default demoMod;
 
 > 核心代码在 [src](./src/) 目录，使用示例在 [demo](./demo/) 目录
 
-### 启动 demo 服务
+### 构建和测试
 
 ```bash
 # 安装依赖
 npm install
 
+# 构建
+npm run build
+
+# 测试
+npm run test
+```
+
+### 调试 demo 服务
+
+```bash
 # 启动调试工具。@see https://github.com/modelcontextprotocol/inspector
 npx @modelcontextprotocol/inspector
 ```
