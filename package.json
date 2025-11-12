@@ -11,7 +11,7 @@
     "clean": "rimraf lib",
     "build": "npm run clean && tsc -p tsconfig.build.json",
     "demo": "npm run build && tsx demo",
-    "test": "npm run build && tsc -p tsconfig.demo.json",
+    "test": "tsc -p tsconfig.demo.json && mcp-inspector --cli npm run demo --method tools/call --tool-name say-hello --tool-arg name=github | grep -q 'Hello, github!' || (echo 'test failed' && exit 1)",
     "prepare": "npm run build"
   },
   "dependencies": {
@@ -19,8 +19,9 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "typescript": "^5.9.3",
+    "@modelcontextprotocol/inspector": "^0.17.2",
     "@types/node": "24.10.0",
+    "typescript": "^5.9.3",
     "rimraf": "^6.1.0",
     "tsx": "^4.20.6"
   },

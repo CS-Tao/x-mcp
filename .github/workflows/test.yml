@@ -15,7 +15,7 @@ jobs:
           node-version: 22
       - run: npm ci
 
-  test:
+  build:
     needs: install
     runs-on: ubuntu-latest
     steps:
@@ -24,3 +24,13 @@ jobs:
         with:
           node-version: 22
       - run: npm run build
+
+  test:
+    needs: install
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18 # Use Node.js 18 for testing
+      - run: npm run test
