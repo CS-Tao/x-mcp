@@ -22,7 +22,7 @@ jobs:
         run: npm run build
 
       - name: Test project (Node 18)
-        run: npx -y node@18 -e "require('child_process').execSync('npm run test', {stdio: 'inherit'})"
+        run: npx -y node@18 -e 'require("child_process").execSync("npm run test", {stdio: "inherit"})'
 
       - name: Publish to npm
         run: npm publish
