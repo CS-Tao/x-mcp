@@ -1,3 +1,6 @@
+[![Test](https://github.com/CS-Tao/x-mcp/actions/workflows/test.yml/badge.svg)](https://github.com/CS-Tao/x-mcp/actions/workflows/test.yml)
+[![Publish](https://github.com/CS-Tao/x-mcp/actions/workflows/publish.yml/badge.svg)](https://github.com/CS-Tao/x-mcp/actions/workflows/publish.yml)
+
 # EXT-MCP
 
 > 🧩 可扩展 MCP 框架 - Extendable MCP Framework
