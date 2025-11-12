@@ -1,3 +1,5 @@
+[![Test](https://github.com/CS-Tao/x-mcp/actions/workflows/test.yml/badge.svg)](https://github.com/CS-Tao/x-mcp/actions/workflows/test.yml)
+
 # ext-mcp demo
 
 > 🌰 ext-mcp 使用示例
