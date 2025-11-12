@@ -1,7 +1,7 @@
 {
-	"servers": {
-		"mcp-demo": {
-			"command": "${workspaceFolder}/demo/run.sh"
-		}
-	}
+  "servers": {
+    "mcp-demo": {
+      "command": "${workspaceFolder}/demo/run.sh"
+    }
+  }
 }
