@@ -11,7 +11,7 @@
     "clean": "rimraf lib",
     "build": "npm run clean && tsc -p tsconfig.build.json",
     "demo": "npm run build && tsx demo",
-    "test": "tsc -p tsconfig.demo.json && mcp-inspector --cli npm run demo --method tools/call --tool-name say-hello --tool-arg name=github | grep -q 'Hello, github!' || (echo 'test failed' && exit 1)",
+    "test": "tsc -p tsconfig.demo.json && mcp-inspector --cli npm run demo --method tools/call --tool-name say-hello --tool-arg name=ext-mcp | grep -q 'Hello, ext-mcp!' || (echo 'test failed' && exit 1)",
     "prepare": "npm run build"
   },
   "dependencies": {

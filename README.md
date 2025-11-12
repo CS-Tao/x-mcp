@@ -1,8 +1,8 @@
-# Ext-mcp
+# EXT-MCP
 
 > 🧩 可扩展 MCP 框架 - Extendable MCP Framework
 
-`Ext-mcp` 包含 `中间件` 和 `模组` 两个概念
+`ext-mcp` 包含 `中间件` 和 `模组` 两个概念
 
 - 中间件：用于承载通用能力，基于洋葱模型实现
 - 模组：用于功能扩展，是 MCP 功能的集合 -- _功能指 MCP 协议中的 tool/prompt/resource_
