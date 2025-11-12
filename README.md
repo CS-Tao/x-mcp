@@ -9,7 +9,7 @@
 
 ```
  ┌─────────────────────────┐
- │   ext-mcp 请求处理流程    │
+ │       LLM Request       │
  └─────────────────────────┘
              ↓
        ╔═════════════╗
@@ -79,7 +79,7 @@ app.start();
 > 以实现一个 logger 中间件为例，在上下文中注入 logId 和 logger
 
 ```typescript
-import { type Middleware } from "mcp";
+import { type Middleware } from "ext-mcp";
 
 export interface LoggerContext {
   logId: string;
@@ -104,7 +104,7 @@ export default middleware;
 ### 模组定义
 
 ```typescript
-import type { Mod, Tool } from "mcp";
+import type { Mod, Tool } from "ext-mcp";
 import { z } from "zod/v3";
 
 const sayHello: Tool<{ name: z.ZodString }> = {
@@ -141,7 +141,7 @@ export default demoMod;
 
 > 核心代码在 [src](./src/) 目录，使用示例在 [demo](./demo/) 目录
 
-### 启动 mcp-demo 服务
+### 启动 demo 服务
 
 ```bash
 # 安装依赖
@@ -153,7 +153,7 @@ npx @modelcontextprotocol/inspector
 
 服务启动后，`Command` 填入 `demo/run.sh` 的绝对路径，即可开始调试
 
-### 配置 mcp-demo 服务
+### 配置 demo 服务到 IDE
 
 仓库中已经针对部分 IDE 做了配置，可直接在 IDE 中查看效果，配置文件:
 

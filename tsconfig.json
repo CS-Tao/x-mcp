@@ -17,6 +17,7 @@
     "moduleResolution": "node",
     "useDefineForClassFields": true,
     "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "paths": {
       "ext-mcp": ["."]
     }

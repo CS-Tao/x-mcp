@@ -11,6 +11,7 @@
     "clean": "rimraf lib",
     "build": "npm run clean && tsc -p tsconfig.build.json",
     "demo": "npm run build && tsx demo",
+    "test": "npm run build && tsc -p tsconfig.demo.json",
     "prepare": "npm run build"
   },
   "dependencies": {
@@ -28,11 +29,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CS-Tao/x-mcp"
+    "url": "git+https://github.com/cs-tao/x-mcp"
   },
   "bugs": {
-    "url": "https://github.com/CS-Tao/x-mcp/issues"
+    "url": "https://github.com/cs-tao/x-mcp/issues"
   },
-  "homepage": "https://github.com/CS-Tao/x-mcp#readme",
-  "keywords": ["mcp"]
+  "homepage": "https://github.com/cs-tao/x-mcp#readme",
+  "keywords": ["mcp", "modelcontextprotocol", "x-mcp", "ext-mcp"]
 }
