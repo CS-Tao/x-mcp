@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  ci:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -23,4 +23,4 @@ jobs:
         run: npm run build
 
       - name: Test project (Node 18)
-        run: npx -y node@18 npm run test
+        run: npx -y node@18 -e "require('child_process').execSync('npm run test', {stdio: 'inherit'})"
