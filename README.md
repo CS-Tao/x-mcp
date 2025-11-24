@@ -154,7 +154,7 @@ npm install
 npm run build
 
 # 测试
-npm run test
+npm test
 ```
 
 ### 调试 demo 服务
