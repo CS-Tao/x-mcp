@@ -33,5 +33,10 @@ jobs:
         run: |
           npx -y node@18 -e 'require("child_process").execSync("npm run test", {stdio: "inherit"})'
 
+      - name: Publish to npm (prerelease)
+        if: 'github.event.prerelease'
+        run: npm publish --tag prerelease
+
       - name: Publish to npm
+        if: '!github.event.prerelease'
         run: npm publish
