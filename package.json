@@ -30,7 +30,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cs-tao/x-mcp"
+    "url": "git+https://github.com/cs-tao/x-mcp.git"
   },
   "bugs": {
     "url": "https://github.com/cs-tao/x-mcp/issues"
