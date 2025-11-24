@@ -126,4 +126,5 @@ dist
 .vscode-test
 
 lib
+es
 logs
