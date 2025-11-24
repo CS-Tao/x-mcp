@@ -64,14 +64,14 @@ const app = new XMCP({
 });
 
 // 🖇️ 中间件
-app.use(path.join(__dirname, "./middlewares/logger")); // 基于文件
-app.use(errorHandler); // 基于导入
-// app.use(require.resolve('@foo/mcp-middleware-logger')); // 基于 npm/workspace 包
+app.use(path.join(__dirname, "./middlewares/logger")); // file path
+app.use(errorHandler); // function
+// app.use(require.resolve('@foo/mcp-middleware-logger')); // npm/workspace package
 
 // 🧩 模组
-app.installMod(path.join(__dirname, "./mods/say-hello")); // 基于文件
-app.installMod(sayGoodbye); // 基于导入
-// app.installMod(require.resolve('@foo/mcp-mod-demo')); // 基于 npm/workspace 包
+app.installMod(path.join(__dirname, "./mods/say-hello")); // file path
+app.installMod(sayGoodbye); // function
+// app.installMod(require.resolve('@foo/mcp-mod-demo')); // npm/workspace package
 
 // 启动服务，目前只支持 stdio 模式
 app.start();
