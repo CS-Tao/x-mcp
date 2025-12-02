@@ -1,15 +1,15 @@
 [![Test](https://github.com/CS-Tao/x-mcp/actions/workflows/test.yml/badge.svg)](https://github.com/CS-Tao/x-mcp/actions/workflows/test.yml)
 [![Publish](https://github.com/CS-Tao/x-mcp/actions/workflows/publish.yml/badge.svg)](https://github.com/CS-Tao/x-mcp/actions/workflows/publish.yml)
-[![Chinese Doc](https://img.shields.io/badge/中文版本-链接-blue?logo=mdbook)](./README.zh-CN.md)
+[![English Doc](https://img.shields.io/badge/English_Version-Link-blue?logo=mdbook)](./README.md)
 
 # EXT-MCP
 
-> 🧩 Extendable MCP Framework
+> 🧩 可扩展 MCP 框架
 
-`ext-mcp` introduces two core concepts: `middleware` and `mods`.
+`ext-mcp` 包含 `中间件` 和 `模组` 两个概念
 
-- Middleware: carries shared capabilities and follows an onion-style execution model.
-- Mods: extends functionality; a mod is a collection of MCP features — _features here refer to tool/prompt/resource in the MCP protocol_.
+- 中间件：用于承载通用能力，基于洋葱模型实现
+- 模组：用于功能扩展，是 MCP 功能的集合 -- _功能指 MCP 协议中的 tool/prompt/resource_
 
 ```
  ┌─────────────────────────┐
@@ -40,17 +40,17 @@
        ╚═════════════╝
 ```
 
-## Quick Start
+## 快速上手
 
-> 🌰 See the complete example in the [demo](./demo/) directory
+> 🌰 完整示例代码见 [demo](./demo/) 目录
 
-### Installation
+### 安装
 
 ```bash
 npm i ext-mcp
 ```
 
-### App entry
+### app 入口
 
 ```typescript
 import path from "path";
@@ -64,23 +64,23 @@ const app = new XMCP({
   version: "0.0.1",
 });
 
-// 🖇️ Middleware
+// 🖇️ 中间件
 app.use(path.join(__dirname, "./middlewares/logger")); // file path
 app.use(errorHandler); // function
-app.use(require.resolve('@foo/mcp-middleware-logger')); // npm/workspace package
+// app.use(require.resolve('@foo/mcp-middleware-logger')); // npm/workspace package
 
-// 🧩 Mods
+// 🧩 模组
 app.installMod(path.join(__dirname, "./mods/say-hello")); // file path
 app.installMod(sayGoodbye); // function
-app.installMod(require.resolve('@foo/mcp-mod-demo')); // npm/workspace package
+// app.installMod(require.resolve('@foo/mcp-mod-demo')); // npm/workspace package
 
-// Start the service. Currently only stdio mode is supported
+// 启动服务，目前只支持 stdio 模式
 app.start();
 ```
 
-### Middleware example
+### 中间件定义
 
-> Example: implement a logger middleware that injects `logId` and `logger` into the context
+> 以实现一个 logger 中间件为例，在上下文中注入 logId 和 logger
 
 ```typescript
 import { type Middleware } from "ext-mcp";
@@ -105,7 +105,7 @@ const middleware: Middleware<LoggerContext> = async (context, next) => {
 export default middleware;
 ```
 
-### Mod example
+### 模组定义
 
 ```typescript
 import type { Mod, Tool } from "ext-mcp";
@@ -114,9 +114,9 @@ import { z } from "zod/v3";
 const sayHello: Tool<{ name: z.ZodString }> = {
   name: "say-hello",
   config: {
-    title: "Say hello",
-    description: "Used for MCP mod demo",
-    inputSchema: { name: z.string().describe("user's name") },
+    title: "打个招呼吧",
+    description: "用于 MCP 模组测试",
+    inputSchema: { name: z.string().describe("用户名字") },
   },
   handler: (context) => {
     const { name } = context.args;
@@ -134,44 +134,43 @@ const sayHello: Tool<{ name: z.ZodString }> = {
 const demoMod: Mod = {
   name: "demo-mod",
   version: "0.0.1",
-  description: "Demo mod",
+  description: "示例模组",
   tools: [sayHello],
 };
 
 export default demoMod;
 ```
 
-## Contributing
+## 仓库开发
 
-> Core source is in the [src](./src/) folder; the demo lives under [demo](./demo/).
+> 核心代码在 [src](./src/) 目录，使用示例在 [demo](./demo/) 目录
 
-### Build & Test
+### 构建和测试
 
 ```bash
-# Install dependencies
+# 安装依赖
 npm install
 
-# Build
+# 构建
 npm run build
 
-# Test
+# 测试
 npm test
 ```
 
-### Debugging the demo service
+### 调试 demo 服务
 
 ```bash
-# Start the inspector. @see https://github.com/modelcontextprotocol/inspector
+# 启动调试工具。@see https://github.com/modelcontextprotocol/inspector
 npx @modelcontextprotocol/inspector
 ```
 
-After the inspector starts, paste the absolute path to `demo/run.sh` into the `Command` field to begin debugging.
+服务启动后，`Command` 填入 `demo/run.sh` 的绝对路径，即可开始调试
 
-### IDE configuration for the demo service
+### 配置 demo 服务到 IDE
 
-This repository includes configuration for several IDEs to view the demo directly:
+仓库中已经针对部分 IDE 做了配置，可直接在 IDE 中查看效果，配置文件:
 
 - [claude-code - .mcp.json](.mcp.json)
 - [cursor - .cursor/mcp.json](.cursor/mcp.json)
-- [github-copilot - .vscode/mcp.json](.vscode/mcp.json)
-
+- [github-copilot - .vscode/mcp.json](.vscode/mcp.json`)

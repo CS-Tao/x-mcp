@@ -1,7 +1,7 @@
 {
   "name": "ext-mcp",
   "version": "1.0.1",
-  "description": "Extendable MCP Framework - 可扩展 MCP 框架",
+  "description": "Extendable MCP Framework",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "exports": {
